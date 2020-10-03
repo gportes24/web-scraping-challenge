@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    h2 {text-align: center;}
+    </style>
+  <title>Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class = "jumbotron text-center">
+            <h1>Mission to Mars</h1>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>  
+        </div>
+    </div>
+    <div class = "row">
+        <div class = "col-md-12">
+            <h4 class="heading">Latest Mars News</h4>
+            <h3>{{mars.news_title}}</h3>
+            <p>{{mars.news_p}}</p>
+        </div>
+    </div>
+    <hr>
+    <div class="row"> 
+      <div class="col-md-8"> 
+        <div class="row">
+          <h3>Feature Image</h3> 
+          <div class="col-md-12">
+            <img src = "{{mars.featured_image}}" alt = "Featured Image">
+           </div>  
+        </div> 
+      </div> 
+      <div class="col-md-4">
+      <div class="table-responsive" style = "overflow-x:auto; overflow-y:auto; max-height:470px; max-width: auto;">
+        <table class ="table table-striped">
+            <thread>
+                <tr style="text-align: right;">
+                    <th></th>
+                    <th>Description</th>
+                    <th>Dimensions</th>
+                  </tr> 
+            </thread>
+            <tbody>
+                <tr>
+                  <th>0</th>
+                  <td>Equatorial Diameter:</td>
+                  <td>6,792 km</td>
+                </tr>
+                <tr>
+                  <th>1</th>
+                  <td>Polar Diameter:</td>
+                  <td>6,752 km</td>
+                </tr>
+                <tr>
+                  <th>2</th>
+                  <td>Mass:</td>
+                  <td>6.39 × 10^23 kg (0.11 Earths)</td>
+                </tr>
+                <tr>
+                  <th>3</th>
+                  <td>Moons:</td>
+                  <td>2 (Phobos &amp; Deimos)</td>
+                </tr>
+                <tr>
+                  <th>4</th>
+                  <td>Orbit Distance:</td>
+                  <td>227,943,824 km (1.38 AU)</td>
+                </tr>
+                <tr>
+                  <th>5</th>
+                  <td>Orbit Period:</td>
+                  <td>687 days (1.9 years)</td>
+                </tr>
+                <tr>
+                  <th>6</th>
+                  <td>Surface Temperature:</td>
+                  <td>-87 to -5 °C</td>
+                </tr>
+                <tr>
+                  <th>7</th>
+                  <td>First Record:</td>
+                  <td>2nd millennium BC</td>
+                </tr>
+                <tr>
+                  <th>8</th>
+                  <td>Recorded By:</td>
+                  <td>Egyptian astronomers</td>
+                </tr>
+              </tbody>
+        </table>
+    </div>
+
+      </div>  
+    </div>
+    <div class="row">
+      <div class="col-md-8 offset-4">
+        <h2 class="align-items-center"><u>Mars Hemispheres</u></h2> 
+      </div>
+    </div>
+    </br>
+    <div class="row">
+      {% for image in mars.Mars_Hemisphere %}
+
+              <div class="col-md-6">
+              </br>
+                    <div>
+                      <img  width="400 px" height="400 px" src="{{image.img_url}}">
+                    </div>
+
+                    <div>
+                      <h4> {{image.title}} </h4>  
+                    </div>
+            
+              </div>
+            {% endfor %}
+    </div> 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  </body>
+</html>
